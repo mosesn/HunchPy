@@ -1,0 +1,63 @@
+    def get_urls(self):
+        return self.urls
+
+    def get_pro_cons(self):
+        return self.pro_cons
+
+    def get_preferences(self):
+        return self.preferences
+
+    def get_wildcard(self):
+        return self.wildcard
+
+    def get_topic_ids(self):
+        return self.topic_ids
+
+    def get_url(self):
+        return self.url
+
+    def get_description(self):
+        return self.description
+
+    def get_categories(self):
+        return self.categories
+
+    def get_image_urls(self):
+        return self.image_urls
+
+    def get_popularity(self):
+        return self.popularity
+
+    def get_score(self):
+        return self.score
+
+    def get_affiliate_links(self):
+        return self.affiliate_links
+
+    def get_is_personalized(self):
+        return self.is_personalized
+
+    def get_stars(self):
+        return self.stars
+
+    def get_image_url(self):
+        return self.image_url
+
+    def get_aliases(self):
+        return self.aliases
+
+    def get_result_id(self):
+        return self.result_id
+
+    def get_price(self):
+        return self.price
+
+    def get_tags(self):
+        return self.tags
+
+    def get_name(self):
+        return self.name
+
+    def get_my_dict(self):
+        return self.my_dict
+
