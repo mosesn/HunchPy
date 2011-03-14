@@ -1,0 +1,12 @@
+app_id
+auth_sig
+result_id
+topic_id
+name
+description
+tags
+url
+lat
+lng
+callback
+suppress_http_errors
