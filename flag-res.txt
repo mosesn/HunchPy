@@ -1,6 +1,0 @@
-auth_token
-result_id
-topic_id
-message
-callback
-suppress_http_errors

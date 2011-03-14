@@ -234,8 +234,6 @@ class HunchReq:
         q_str = "&".join(lst)
         urlstr = "http://api.hunch.com/api/v1/get-recommendations/?"+q_str
 
-        print urlstr
-        
         return json.load(urllib2.urlopen(urlstr))
         
     def get_results(self):

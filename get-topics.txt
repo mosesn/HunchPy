@@ -1,6 +1,0 @@
-app_id
-auth_sig
-topic_ids
-sites
-callback
-suppress_http_errors

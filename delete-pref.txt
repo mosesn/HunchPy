@@ -1,7 +1,0 @@
-auth_token
-result_id
-topic_ids
-types
-friend_id
-callback
-suppress_http_errors

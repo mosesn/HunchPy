@@ -1,3 +1,0 @@
-calls
-callback
-suppress_http_errors
