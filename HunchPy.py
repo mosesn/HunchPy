@@ -16,11 +16,68 @@ def demo_call():
 
 class HunchReq:
     def __init__(self):
-        self.topic = ""
+        self.wildcards = None
+        self.rating = None
+        self.reverse = None
+        self.topic_ids = None
+        self.maxlng = None
+        self.auth_token = None
+        self.offset = None
+        self.dislikes = None
+        self.app_id = None
+        self.blocked_qids = None
+        self.user_id1 = None
+        self.minlat = None
+        self.exclude_likes = None
+        self.user_id2 = None
+        self.radius = None
+        self.likes = None
+        self.query = None
+        self.lng = None
+        self.message = None
+        self.description = None
+        self.result_id1 = None
+        self.blocked_topic_ids = None
+        self.result_id2 = None
+        self.minlng = None
+        self.pros = None
+        self.sites = None
+        self.blocked_sites = None
+        self.allowed_qids = None
+        self.friend_id = None
+        self.response_id = None
+        self.avoid_rids = None
+        self.minimal = None
+        self.sort = None
+        self.auth_sig = None
+        self.responses = None
+        self.cons = None
+        self.tags = None
+        self.exclude_chains = None
+        self.topic_id = None
+        self.exclude_dislikes = None
+        self.user_ids = None
+        self.maxlat = None
+        self.lat = None
+        self.user_id = None
+        self.types = None
+        self.blocked_result_ids = None
+        self.auth_token_key = None
+        self.name = None
+        self.result_ids = None
+        self.url = None
+        self.suppress_http_errors = None
+        self.callback = None
+        self.token = None
         self.limit = None
-        self.twitter = ""
+        self.calls = None
+        self.friend_ids = None
+        self.question_id = None
+        self.result_id = None
+        self.blocked_rids = None
 
-    def get_recommendations:
+
+    def get_recommendations(self):
         lst = []
         
         tmp = None
@@ -175,11 +232,13 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-recommendations/?"+q_str
+
+        print urlstr
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_results:
+    def get_results(self):
         lst = []
         
         tmp = None
@@ -299,11 +358,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-results/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_similar_results:
+    def get_similar_results(self):
         lst = []
         
         tmp = None
@@ -428,11 +487,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-similar-results/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def flag_result:
+    def flag_result(self):
         lst = []
         
         tmp = None
@@ -467,11 +526,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/flag-result/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def create_result:
+    def create_result(self):
         lst = []
         
         tmp = None
@@ -536,11 +595,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/create-result/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def edit_result:
+    def edit_result(self):
         lst = []
         
         tmp = None
@@ -600,11 +659,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/edit-result/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def delete_result:
+    def delete_result(self):
         lst = []
         
         tmp = None
@@ -634,11 +693,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/delete-result/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def set_result_alias:
+    def set_result_alias(self):
         lst = []
         
         tmp = None
@@ -673,11 +732,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/set-result-alias/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_auth_token:
+    def get_auth_token(self):
         lst = []
         
         tmp = None
@@ -732,11 +791,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-auth-token/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_token_status:
+    def get_token_status(self):
         lst = []
         
         tmp = None
@@ -766,11 +825,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-token-status/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_user_info:
+    def get_user_info(self):
         lst = []
         
         tmp = None
@@ -790,11 +849,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-user-info/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_friends:
+    def get_friends(self):
         lst = []
         
         tmp = None
@@ -844,11 +903,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-friends/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_tastemates:
+    def get_tastemates(self):
         lst = []
         
         tmp = None
@@ -958,11 +1017,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-tastemates/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_recommendees:
+    def get_recommendees(self):
         lst = []
         
         tmp = None
@@ -1002,11 +1061,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-recommendees/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def set_user_alias:
+    def set_user_alias(self):
         lst = []
         
         tmp = None
@@ -1041,11 +1100,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/set-user-alias/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_result_topics:
+    def get_result_topics(self):
         lst = []
         
         tmp = None
@@ -1150,11 +1209,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-result-topics/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_topics:
+    def get_topics(self):
         lst = []
         
         tmp = None
@@ -1189,11 +1248,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-topics/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_activity:
+    def get_activity(self):
         lst = []
         
         tmp = None
@@ -1308,11 +1367,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-activity/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_preferences:
+    def get_preferences(self):
         lst = []
         
         tmp = None
@@ -1362,11 +1421,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-preferences/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_pro_cons:
+    def get_pro_cons(self):
         lst = []
         
         tmp = None
@@ -1411,11 +1470,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-pro-cons/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def set_preference:
+    def set_preference(self):
         lst = []
         
         tmp = None
@@ -1470,11 +1529,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/set-preference/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def set_pro_cons:
+    def set_pro_cons(self):
         lst = []
         
         tmp = None
@@ -1514,11 +1573,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/set-pro-cons/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def delete_preference:
+    def delete_preference(self):
         lst = []
         
         tmp = None
@@ -1558,11 +1617,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/delete-preference/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_predictions:
+    def get_predictions(self):
         lst = []
         
         tmp = None
@@ -1627,11 +1686,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-predictions/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def get_questions:
+    def get_questions(self):
         lst = []
         
         tmp = None
@@ -1661,11 +1720,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/get-questions/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
         
-    def teach_hunch_about_you:
+    def teach_hunch_about_you(self):
         lst = []
         
         tmp = None
@@ -1695,9 +1754,11 @@ class HunchReq:
         tmp = None
         
         q_str = "&".join(lst)
-        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        urlstr = "http://api.hunch.com/api/v1/teach-hunch-about-you/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
+        
+
         
     def get_wildcards(self):
         if self.wildcards:
