@@ -1,18 +1,5 @@
-
 import urllib2
 import json
-
-def fib(n):
-    alpha = 0
-    beta = 1
-    for i in range(n):
-        alpha , beta = beta , alpha + beta
-    return alpha
-
-#returns a file pointer
-def demo_call():
-    urlstr = "http://api.hunch.com/api/v1/get-recommendations/?user_id=tw_oprah&topic_ids=list_magazine&limit=3"
-    return urllib2.urlopen(urlstr)
 
 class HunchReq:
     def __init__(self):
@@ -75,7 +62,6 @@ class HunchReq:
         self.question_id = None
         self.result_id = None
         self.blocked_rids = None
-
 
     def get_recommendations(self):
         lst = []
@@ -733,8 +719,33 @@ class HunchReq:
         urlstr = "http://api.hunch.com/api/v1/set-result-alias/?"+q_str
         
         return json.load(urllib2.urlopen(urlstr))
-        
-    def get_auth_token(self):
+
+'''
+From Harold Cooper, Hunch API Developer:
+
+Your app should send the user, perhaps from a splash screen or something, to:
+http://hunch.com/authorize/v1/?app_id=xxx&next=http://mysite.com/whatever
+
+If they are already logged in and have allowed your app, or once they
+log in ... and authorize your app, then they will be redirected to:
+http://mysite.com/whatever?auth_token_key=abc&user_id=xxx&next=http://mysite.com/whatever
+You can ignore the user_id and next parameters if you want.
+
+Then you make a signed API call to get the actual auth_token:
+http://api.hunch.com/api/v1/get-auth-token/?auth_token_key=abc&app_id=xxx&auth_sig=yyy
+(where auth_sig is computed for auth_token_key=abc&app_id=xxx using
+your app secret)
+
+You will then receive the user's auth_token!
+Note that get-auth-token will probably be the only API call you ever
+have to sign with your app secret, since most of the other interesting
+calls just take an auth_token.
+'''
+
+#after you run get_oauth_token, pass it to set_oauth_token(token) 
+#to make a request with that token
+
+    def get_oauth_token(self):
         lst = []
         
         tmp = None
@@ -791,7 +802,13 @@ class HunchReq:
         q_str = "&".join(lst)
         urlstr = "http://api.hunch.com/api/v1/get-auth-token/?"+q_str
         
-        return json.load(urllib2.urlopen(urlstr))
+        return auth_token
+
+    def set_oauth_token(self,auth_token):
+        if auth_token['ok']:
+            self.set_user_id(auth_token['user_id'])
+            self.set_auth_token(auth_token['auth_token'])
+
         
     def get_token_status(self):
         lst = []
