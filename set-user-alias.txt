@@ -1,0 +1,6 @@
+app_id
+auth_sig
+user_id1
+user_id2
+callback
+suppress_http_errors

@@ -1,0 +1,5 @@
+app_id
+auth_sig
+token
+callback
+suppress_http_errors

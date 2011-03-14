@@ -1,63 +1,1679 @@
-    def get_urls(self):
-        return self.urls
-
-    def get_pro_cons(self):
-        return self.pro_cons
-
-    def get_preferences(self):
-        return self.preferences
-
-    def get_wildcard(self):
-        return self.wildcard
-
-    def get_topic_ids(self):
-        return self.topic_ids
-
-    def get_url(self):
-        return self.url
-
-    def get_description(self):
-        return self.description
-
-    def get_categories(self):
-        return self.categories
-
-    def get_image_urls(self):
-        return self.image_urls
-
-    def get_popularity(self):
-        return self.popularity
-
-    def get_score(self):
-        return self.score
-
-    def get_affiliate_links(self):
-        return self.affiliate_links
-
-    def get_is_personalized(self):
-        return self.is_personalized
-
-    def get_stars(self):
-        return self.stars
-
-    def get_image_url(self):
-        return self.image_url
-
-    def get_aliases(self):
-        return self.aliases
-
-    def get_result_id(self):
-        return self.result_id
-
-    def get_price(self):
-        return self.price
-
-    def get_tags(self):
-        return self.tags
-
-    def get_name(self):
-        return self.name
-
-    def get_my_dict(self):
-        return self.my_dict
-
+    def get_recommendations:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_radius()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_query()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_name()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_tags()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_exclude_likes()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_exclude_dislikes()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minimal()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_exclude_chains()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_likes()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_dislikes()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_responses()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_friend_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_limit()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_offset()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_wildcards()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_results:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_radius()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_query()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_name()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_tags()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minimal()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_limit()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_offset()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_similar_results:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_radius()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_query()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_name()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_tags()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_limit()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_offset()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_wildcards()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def flag_result:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_message()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def create_result:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_name()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_description()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_tags()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_url()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def edit_result:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_name()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_description()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_tags()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_url()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def delete_result:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def set_result_alias:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_id1()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_id2()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_auth_token:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_token_key()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_token_status:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_user_info:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_friends:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_friend_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_sort()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_reverse()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_limit()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_offset()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_tastemates:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_radius()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_query()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_name()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_tags()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_limit()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_offset()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_recommendees:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_limit()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_offset()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_wildcards()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def set_user_alias:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_user_id1()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_user_id2()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_result_topics:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_radius()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_query()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_name()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_tags()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_topics:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_activity:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_user_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_lng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_radius()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlat()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_minlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_maxlng()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_query()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_name()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_tags()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_limit()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_offset()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_preferences:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_sites()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_types()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_limit()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_offset()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_pro_cons:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_user_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_limit()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_offset()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def set_preference:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_types()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_rating()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_pros()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_cons()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_friend_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def set_pro_cons:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_pros()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_cons()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def delete_preference:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_result_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_topic_ids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_types()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_friend_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_predictions:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_allowed_qids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_qids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_blocked_rids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_avoid_rids()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_likes()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_dislikes()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_responses()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_limit()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_offset()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def get_questions:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_app_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_auth_sig()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_question_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
+    def teach_hunch_about_you:
+        lst = []
+        
+        tmp = None
+        tmp =  self.get_auth_token()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_question_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_response_id()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_callback()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        tmp =  self.get_suppress_http_errors()
+        if tmp:
+            lst.append(tmp)
+        tmp = None
+        
+        q_str = "&".join(lst)
+        urlstr = "http://api.hunch.com/api/v1/"+tup[0]+"/?"+q_str
+        
+        return json.load(urllib2.urlopen(urlstr))
+        
