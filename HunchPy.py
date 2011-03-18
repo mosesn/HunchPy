@@ -720,20 +720,20 @@ class HunchReq:
         
         return json.load(urllib2.urlopen(urlstr))
 
-'''
-From Harold Cooper, Hunch API Developer:
+    '''
+    From Harold Cooper, Hunch API Developer:
 
-Your app should send the user, perhaps from a splash screen or something, to:
-http://hunch.com/authorize/v1/?app_id=xxx&next=http://mysite.com/whatever
+    Your app should send the user, perhaps from a splash screen or something, to:
+    http://hunch.com/authorize/v1/?app_id=xxx&next=http://mysite.com/whatever
 
-If they are already logged in and have allowed your app, or once they
-log in ... and authorize your app, then they will be redirected to:
-http://mysite.com/whatever?auth_token_key=abc&user_id=xxx&next=http://mysite.com/whatever
-You can ignore the user_id and next parameters if you want.
+    If they are already logged in and have allowed your app, or once they
+    log in ... and authorize your app, then they will be redirected to:
+    http://mysite.com/whatever?auth_token_key=abc&user_id=xxx&next=http://mysite.com/whatever
+    You can ignore the user_id and next parameters if you want.
 
-Then you make a signed API call to get the actual auth_token:
-http://api.hunch.com/api/v1/get-auth-token/?auth_token_key=abc&app_id=xxx&auth_sig=yyy
-(where auth_sig is computed for auth_token_key=abc&app_id=xxx using
+    Then you make a signed API call to get the actual auth_token:
+    http://api.hunch.com/api/v1/get-auth-token/?auth_token_key=abc&app_id=xxx&auth_sig=yyy
+    (where auth_sig is computed for auth_token_key=abc&app_id=xxx using
 your app secret)
 
 You will then receive the user's auth_token!
@@ -744,7 +744,7 @@ calls just take an auth_token.
 
 #after you run get_oauth_token, pass it to set_oauth_token(token) 
 #to make a request with that token
-
+    
     def get_oauth_token(self):
         lst = []
         
